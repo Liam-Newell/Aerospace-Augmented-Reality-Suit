@@ -142,6 +142,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Exoskeleton.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Profile.cpp" />
+    <ClCompile Include="Task.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Araig_Sensors.h" />
+    <ClInclude Include="Exoskeleton.h" />
+    <ClInclude Include="Profile.h" />
+    <ClInclude Include="Stims.h" />
+    <ClInclude Include="Stimulation.h" />
+    <ClInclude Include="Task.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SampleProfileConfiguration.csv" />
+    <None Include="StimulationConfig.csv" />
+    <None Include="TaskConfiguration.csv" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

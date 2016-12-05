@@ -1,13 +1,11 @@
 #include"Task.h"
+
 Task::Task(const Task &src)
 {
 	if (this != &src) 
 	{
 		name = src.name;
-		
 		Init(src);
-		
-
 	}
 }
 
@@ -34,12 +32,10 @@ Task& Task::operator+=(Stimulation &src)
 {
 	stimus.push_back(&src);
 	return *this;
-	// TODO: insert return statement here
 }
 
 void Task::removeTask( std::string index)
 {
-	//stimus.remove(stimus == index);
 	for (auto it = stimus.begin(); it != stimus.end();) 
 	{
 		if ((*it)->getStim().compare(index)==0)
@@ -55,13 +51,4 @@ std::ostream & Task::dump(ostream & os)
 		os << (*it)->getTask() << endl;
 	}
 	return os;
-	// TODO: insert return statement here
 }
-
-//Stimulation *& Task::operator+=(const Task &src)
-//{
-//	// TODO: insert return statement here
-//	Init(src);
-//	auto it = src.stimus.begin();
-//	return src.stimus;
-//}

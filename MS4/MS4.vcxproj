@@ -142,7 +142,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Exoskeleton.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Profile.cpp" />
     <ClCompile Include="Task.cpp" />

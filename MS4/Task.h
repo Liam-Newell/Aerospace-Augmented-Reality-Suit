@@ -20,11 +20,9 @@ using namespace std;
 			stimus.clear();
 			name = _name;
 		}
-		~Task() {
-			name.clear();
-			stimus.clear();
-		}
+		
 		Task(const Task&);
+		Task& operator =(Task&);
 		string getName() { return name; }
 		void Init(const Task&);
 		Task(Task&&);
@@ -51,6 +49,12 @@ using namespace std;
 		std::ostream& operator<<(std::ostream& os)const {
 			display(os);
 			return os;
+		};
+		~Task() {
+			for (auto&& stim : stimus) {
+				delete stim;
+				stim = nullptr;
+			}
 		};
 
 	};

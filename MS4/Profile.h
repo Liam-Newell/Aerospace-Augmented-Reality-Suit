@@ -1,6 +1,7 @@
 #pragma once
 #include "Araig_Sensors.h"
 #include <vector>
+#include <deque>
 
 using namespace std;
 struct calibration
@@ -16,18 +17,17 @@ class Profile
 	string iFname, iLname;
 	int iNum;
 	calibration sInt;
-	vector <Task*> ToRun;
+	deque <Task*> ToRun;
 	vector <Task*> Completed;
 	Task *LastTask, *NextTask;
-
 public:
-
 	Profile(char*, ostream&, ARAIG_Sensors&);
-	ostream& displayrun(ostream&, int i =0);
-	ostream & displayCompleted(ostream &);
-	ostream & recent(ostream& os);
-	ostream & next(ostream& os);
-	ostream & info(ostream& os);
+	ostream& displayrun(ostream&, int i =0)const;
+	ostream & displayCompleted(ostream &)const;
+	ostream & recent(ostream& os)const;
+	ostream & next(ostream& os)const;
+	ostream & info(ostream& os) const;
 	void run();
+	~Profile();
 };
 

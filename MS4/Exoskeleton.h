@@ -11,7 +11,7 @@
 		size_t duration;
 
 	public:
-		Exoskeleton();
+		Exoskeleton() { name.clear(); };
 
 		Exoskeleton(std::string n, size_t i, size_t d) : name(n), intensity(i), duration(d) { setName("Exoskeleton"); };
 		std::ostream& display(std::ostream& os) const
@@ -24,7 +24,7 @@
 		std::string getTask()const { return getName(); }
 		std::ostream& operator<<(std::ostream& os)const { return display(os); };
 		std::string getStim()const { return name; };
-		~Exoskeleton();
+		~Exoskeleton() { name.clear(); };
 	};
 
 

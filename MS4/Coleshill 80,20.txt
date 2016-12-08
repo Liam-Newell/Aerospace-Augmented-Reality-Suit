@@ -1,0 +1,209 @@
+For Student Chloe Coleshill 123456789
+With Instructor Eliott Coleshill 987654321
+The Flight Plan Is
+
+Task1
+Task15
+Task5
+Task4
+Task15
+Task16
+Task17
+Task7
+
+Max Intensity Is 80
+Min intensity Is 20
+Task: Task1
+Sim30
+	Type = Stimulation
+	Location = traps
+	Intensity = 55
+	Frequency = 36
+	Duration = 6
+Sim2
+	Type = Stimulation
+	Location = back
+	Intensity = 87
+	Frequency = 35
+	Duration = 10
+Sim22
+	Type = Exoskeleton
+	Intensity = 67
+	Duration = 5
+Sim15
+	Type = Stimulation
+	Location = back
+	Intensity = 41
+	Frequency = 88
+	Duration = 4
+Task: Task15
+Sim15
+	Type = Stimulation
+	Location = back
+	Intensity = 41
+	Frequency = 88
+	Duration = 4
+Sim13
+	Type = Stimulation
+	Location = front
+	Intensity = 63
+	Frequency = 47
+	Duration = 7
+Sim12
+	Type = Exoskeleton
+	Intensity = 7
+	Duration = 10
+Task: Task5
+Sim32
+	Type = Exoskeleton
+	Intensity = 93
+	Duration = 0
+Sim1
+	Type = Stimulation
+	Location = front
+	Intensity = 13
+	Frequency = 60
+	Duration = 0
+Task: Task4
+Sim7
+	Type = Stimulation
+	Location = traps
+	Intensity = 68
+	Frequency = 60
+	Duration = 3
+Sim10
+	Type = Exoskeleton
+	Intensity = 82
+	Duration = 3
+Sim23
+	Type = Exoskeleton
+	Intensity = 75
+	Duration = 5
+Sim27
+	Type = Stimulation
+	Location = abs
+	Intensity = 82
+	Frequency = 95
+	Duration = 8
+Sim26
+	Type = Exoskeleton
+	Intensity = 24
+	Duration = 4
+Sim18
+	Type = Exoskeleton
+	Intensity = 76
+	Duration = 10
+Task: Task15
+Sim15
+	Type = Stimulation
+	Location = back
+	Intensity = 41
+	Frequency = 88
+	Duration = 4
+Sim13
+	Type = Stimulation
+	Location = front
+	Intensity = 63
+	Frequency = 47
+	Duration = 7
+Sim12
+	Type = Exoskeleton
+	Intensity = 7
+	Duration = 10
+Task: Task16
+Sim17
+	Type = Stimulation
+	Location = front
+	Intensity = 32
+	Frequency = 14
+	Duration = 1
+Sim26
+	Type = Exoskeleton
+	Intensity = 24
+	Duration = 4
+Sim9
+	Type = Exoskeleton
+	Intensity = 47
+	Duration = 5
+Sim9
+	Type = Exoskeleton
+	Intensity = 47
+	Duration = 5
+Sim32
+	Type = Exoskeleton
+	Intensity = 93
+	Duration = 0
+Sim32
+	Type = Exoskeleton
+	Intensity = 93
+	Duration = 0
+Task: Task17
+Sim6
+	Type = Exoskeleton
+	Intensity = 3
+	Duration = 2
+Sim10
+	Type = Exoskeleton
+	Intensity = 82
+	Duration = 3
+Task: Task7
+Sim30
+	Type = Stimulation
+	Location = traps
+	Intensity = 55
+	Frequency = 36
+	Duration = 6
+Sim10
+	Type = Exoskeleton
+	Intensity = 82
+	Duration = 3
+Sim18
+	Type = Exoskeleton
+	Intensity = 76
+	Duration = 10
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Repeated Tasks
+Task: Task15
+Sim15
+	Type = Stimulation
+	Location = back
+	Intensity = 41
+	Frequency = 88
+	Duration = 4
+Sim13
+	Type = Stimulation
+	Location = front
+	Intensity = 63
+	Frequency = 47
+	Duration = 7
+Sim12
+	Type = Exoskeleton
+	Intensity = 7
+	Duration = 10
+Task: Task16
+Sim17
+	Type = Stimulation
+	Location = front
+	Intensity = 32
+	Frequency = 14
+	Duration = 1
+Sim26
+	Type = Exoskeleton
+	Intensity = 24
+	Duration = 4
+Sim9
+	Type = Exoskeleton
+	Intensity = 47
+	Duration = 5
+Sim9
+	Type = Exoskeleton
+	Intensity = 47
+	Duration = 5
+Sim32
+	Type = Exoskeleton
+	Intensity = 93
+	Duration = 0
+Sim32
+	Type = Exoskeleton
+	Intensity = 93
+	Duration = 0

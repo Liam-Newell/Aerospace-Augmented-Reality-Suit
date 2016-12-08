@@ -8,28 +8,42 @@ Profile::Profile(char * f, ostream & os, ARAIG_Sensors & Tsrc)
 		throw string("Couldn't open the profile file \nPlease check the config");
 	else
 	{
-			getline(file, sFname, ',');
-			getline(file, sLname, ',');
-			file >> sNum;
-			file.ignore();
-			getline(file, iFname, ',');
-			getline(file, iLname, ',');
-			file >> iNum;
-			file.ignore();
-			file >> sInt.max;
-			file.ignore();
-			file >> sInt.min;
-			file.ignore();
+
+
+		getline(file, sFname, ',');
+		getline(file, sLname, ',');
+		file >> sNum;
+		file.ignore();
+		getline(file, iFname, ',');
+		getline(file, iLname, ',');
+		file >> iNum;
+		file.ignore();
+		file >> sInt.max;
+		file.ignore();
+		file >> sInt.min;
+		file.ignore();
+		string outputname = (sLname + " " + to_string(sInt.max) + "," + to_string(sInt.min) + ".txt");
+			output.open(outputname, ios::trunc);
 			while (!file.eof())
 			{
+
 				string tempTask;
 
 				getline(file, tempTask);
 				//create copy rather than a move
 				//Temp to store a copy//Copy task
 				ToRun.push_back(new Task(*Tsrc.getTask(tempTask)));//Copy task to pointer array
+				
 				//ToRun.push_back(Tsrc.getTask(tempTask));
+				
 			}
+			info(output);
+			for (size_t i = 0; i < ToRun.size(); i++)
+			{
+				ToRun[i]->display(output);
+			}
+			output << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl << "Repeated Tasks\n";
+
 	}
 
 }
@@ -72,10 +86,10 @@ ostream & Profile::info(ostream & os) const
 {
 	os << "For Student " << sFname << " " << sLname << " " << sNum << endl;
 	os << "With Instructor " << iFname << " " << iLname << " " << iNum << endl;
-	cout << "The Flight Plan Is" << endl <<endl;
+	os << "The Flight Plan Is" << endl <<endl;
 	for (auto i = 0;i < ToRun.size();i++)
 	{
-		cout << ToRun[i]->getName() << endl;
+		os << ToRun[i]->getName() << endl;
 	}
 	os << endl << "Max Intensity Is " << sInt.max << endl << "Min intensity Is " << sInt.min << endl;
 	return os;
@@ -90,7 +104,7 @@ void Profile::run()
 	int loopc = 0;
 	size_t tSize = ToRun.size();
 	while (cont == true) {
-		cout << endl << "For the previous task type : 'p'\nFor the next Task Type : 'n'\nTo show the tasks to run type : 'r'\nTo show the tasks that are completed : 'c'\nTo advance flight do anything else\nTo repeat the test info press 'i'\nTo repeat a Task type 'a'\nTo Quit Press 'e'\n";
+		cout << endl << "For the previous task type : 'p'\nFor the next Task Type : 'n'\nTo show the tasks to run type : 'r'\nTo show the tasks that are completed : 'c'\nTo repeat the test info press 'i'\nTo repeat a Task type 'a'\nTo Quit Press 'e'\n\n\nTo advance flight press anything else\n";
 		cin.clear();
 		cin.get(input);
 		cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
@@ -115,6 +129,7 @@ void Profile::run()
 			{
 				if (ToRun[i]->getName().compare(ttask) == 0) {
 					ToRun.push_back(new Task(*ToRun[i]));
+					ToRun[i]->display(output);
 					cout << "\nClass Copied From To Run\n";
 					cont = false;
 					break;
@@ -127,6 +142,7 @@ void Profile::run()
 				{
 					if (Completed[i]->getName().compare(ttask) == 0) {
 						ToRun.push_back(new Task(*Completed[i]));
+						Completed[i]->display(output);
 						cout << "\nClass Copied From Completed Tasks\n";
 						cont = false;
 						break;
@@ -171,6 +187,7 @@ void Profile::run()
 		default: {
 			cout << "\nExecuting ";
 			ToRun[0]->display(cout);
+			//Moving address over
 			Task* p = ToRun[0];
 			LastTask = p;
 			ToRun.pop_front();
@@ -200,6 +217,7 @@ void Profile::run()
 
 Profile::~Profile()
 {
+	output.close();
 	ToRun.~deque();
 	Completed.~vector();
 	LastTask = nullptr;

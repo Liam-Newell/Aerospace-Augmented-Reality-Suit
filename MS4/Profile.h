@@ -20,6 +20,7 @@ class Profile
 	deque <Task*> ToRun;
 	vector <Task*> Completed;
 	Task *LastTask, *NextTask;
+	ofstream output;
 public:
 	Profile(char*, ostream&, ARAIG_Sensors&);
 	ostream& displayrun(ostream&, int i =0)const;
